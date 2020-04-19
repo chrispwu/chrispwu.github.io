@@ -284,6 +284,16 @@ function pageFocus() {
   mainContent.focus();
 }
 
+function initcolor() {
+  const cssFile = document.querySelector('[rel="stylesheet"]')
+  const originalCssRef = cssFile.getAttribute('href')
+  const darkModeCssRef = originalCssRef.replace('just-the-docs.css', 'dark-mode-preview.css')
+  if (window.localStorage.getItem('cpwgio_theme')==='Dark'){
+    cssFile.setAttribute('href', darkModeCssRef)
+  } else {
+    window.localStorage.setItem('cpwgio_theme', 'Light')
+  }
+}
 // Document ready
 
 jtd.onReady(function(){
@@ -292,6 +302,7 @@ jtd.onReady(function(){
   if (typeof lunr !== 'undefined') {
     initSearch();
   }
+  initcolor();
 });
 
 })(window.jtd = window.jtd || {});
