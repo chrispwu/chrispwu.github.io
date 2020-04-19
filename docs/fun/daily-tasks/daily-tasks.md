@@ -31,3 +31,6 @@ Batch GeoTag or date/time correction for photos.
 
 ### Notes
 {: .no_toc}
+
+### IME
+{: .no_toc}
